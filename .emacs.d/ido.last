@@ -1,0 +1,74 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/" . "etc/")
+ ("/home/usb/Dev/" . "cpp/")
+ ("/home/usb/Downloads/.config/" . "awesome/")
+ ("/home/usb/Downloads/" . ".config/")
+ ("/home/usb/.config/btop/" . "themes/")
+ ("/home/usb/" . "Dev/")
+ ("/home/usb/.config/" . "awesome/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/usb/Dev/"
+ "/etc/"
+ "/home/usb/Dev/cpp/"
+ "/home/usb/.config/awesome/"
+ "/home/usb/Downloads/.config/awesome/"
+ "/home/usb/"
+ "/home/usb/.config/"
+ "/home/usb/.config/btop/"
+ "/home/usb/.config/glances/"
+ "/home/usb/Documents/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "test.py"
+ "pacman.conf"
+ "My_Screen_Layout.sh"
+ "main.cpp"
+ "rc.lua"
+ ".emacs"
+ "starship.toml"
+ "btop.conf"
+ "glances.conf"
+ ".bashrc"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/usb/" (26148 62224 627712 628000) ".bash_history-32221.tmp" ".bash_logout" ".Xresources" ".angular-config.json" ".local/" ".swt/" ".gtkrc-2.0" ".gnupg/" "Dev/" ".viminfo" ".emacs~" ".jd/" ".bash_profile" ".cache/" ".eclipse/" ".Xauthority" ".librewolf/" ".cargo/" ".emacs" "Pictures/" ".dmrc" "./" ".pki/" ".bashrc~" ".config/" ".icons/" "../" ".vscode/" ".npm/" ".xsession-errors" ".xsession-errors.old" ".java/" ".bashrc" ".dotnet/" "Documents/" ".emacs.d/" ".bash_history" ".gitconfig" "Downloads/")
+
+ ("/home/usb/Dev/" (26148 61429 493164 714000) "Test/" "eclipse-workspace/" "./" "test.py" "../" "my-app/" "cpp/")
+
+ ("/home/usb/.config/glances/" (26147 41741 380366 420000) "./" "../" "glances.conf" "glances.conf~")
+
+ ("/home/usb/.config/btop/" (26147 41984 814061 208000) "btop.conf~" "btop.conf" "./" "../" "themes/")
+
+ ("/home/usb/.config/" (26148 38311 304218 676000) "awesome/" "libreoffice/" "starship.toml" "texstudio/" "gtk-3.0/" "systemd/" "pcmanfm/" "xfce4/" "libfm/" "gtk-2.0/" "klavaro/" "ranger/" "Thunar/" "BraveSoftware/" "qBittorrent/" "koreader/" "btop/" "neofetch/" "qt5ct/" "font-manager/" "./" "pulse/" "dconf/" "../" "codeblocks/" "fontconfig/" "alacritty/" "Code/" "xarchiver/" "mimeapps.list" "qView/" "starship.toml~" "glances/")
+
+ ("/etc/" (26148 58438 793679 383000) "shadow-" "mdadm.conf" "X11/" "libreoffice/" "paperspecs" "default/" "binfmt.d/" "group-" "ssl/" "slsh.rc" "credstore/" "conf.d/" "gtk-3.0/" "os-release" "NetworkManager/" "issue" "systemd/" ".pwd.lock" "hostname" "securetty" "hosts" "crypttab" "ethertypes" "avahi/" "gtk-2.0/" "smartd.conf" "mtab" "sudoers.d/" "rc_maps.cfg" "mkinitcpio.conf" "locale.gen" "services" "sysctl.d/" "vdpau_wrapper.cfg" "protocols" "pacman.d/" "rpc" "bindresvport.blacklist" "subgid" "profile" "openldap/" "locale.conf" "lightdm/" "rc_keymaps/" "ca-certificates/" "ImageMagick-7/" "subuid-" "gai.conf" "passwd" "host.conf" "subuid" "security/" "apparmor.d/" "ssh/" "ld.so.conf.d/" "credstore.encrypted/" "pkcs11/" "resolv.conf" "xattr.conf" "polkit-1/" "fuse.conf" "debuginfod/" "mkinitcpio.d/" "group" "skel/" "xdg/" "initcpio/" ".updated" "papersize" "sensors.d/" "arch-release" "wpa_supplicant/" "audit/" "vpl/" "request-key.d/" "pacman.conf" "tpm2-tss/" "mpv/" "pipewire/" "libinput/" "paru.conf" "./" "vconsole.conf" "mkinitcpio.conf.d/" "gshadow" "environment" "java21-openjdk/" "fstab" "audisp/" "mime.types" "inputrc" "mailcap" "sensors3.conf" "gprofng.rc" "pulse/" "libpaper.d/" "dconf/" "xml/" "mke2fs.conf" "../" "libblockdev/" "alsa/" "ts.conf" "sudo_logsrvd.conf" "keyutils/" "tmpfiles.d/" "krb5.conf" "shells" "iptables/" "passwd-" "nsswitch.conf" "libaudit.conf" "vimrc" "healthd.conf" "bash.bashrc" "modprobe.d/" "sudo.conf" "kernel/" "depmod.d/" "machine-id" "nginx/" "fonts/" "shadow" "request-key.conf" "ld.so.conf" "highlight/" "makepkg.conf.d/" "profile.d/" "man_db.conf" "subgid-" "bash.bash_logout" "nanorc" "pinentry/" "ld.so.cache" "bluetooth/" "wgetrc" "sudoers" "gshadow-" "netconfig" "gnutls/" "modules-load.d/" "login.defs" "pam.d/" "udisks2/" "makepkg.conf" "e2scrub.conf" "localtime" "libnl/" "libva.conf" "udev/")
+
+ ("/home/" (26144 55792 953927 584000) "./" "../" "usb/")
+
+ ("/home/usb/.config/awesome/" (26148 38227 662213 894000) "My_Screen_Layout.sh~" "rc.lua~" "My_Screen_Layout.sh" "./" "../" "themes/" "rc.lua")
+
+ ("/home/usb/Dev/cpp/" (26148 4721 228650 625000) "main.h" "main.cpp" "./" "main.cpp~" "../")
+
+ ("/home/usb/Downloads/.config/awesome/" (26147 53159 653235 80000) "theme.lua" "./" "../" "mytasklist.lua" "rc.lua")
+
+ ("/home/usb/Downloads/.config/" (26146 9956 135385 426000) "awesome/" "./" "../" "picom/")
+
+ ("/home/usb/Downloads/" (26147 53202 343257 596000) "starship.toml" "Ferdium-linux-Portable-6.7.2-x86_64.AppImage" "Github_Repos/" "Noto_Sans_Symbols,Noto_Sans_Symbols_2/" "./" ".config/" "../" "starship (1).toml" "bookmarks_4_19_24.html" "rice.zip")
+
+ ("/home/usb/.config/btop/themes/" (26144 57192 533571 894000) "./" "../")
+
+ ("/home/usb/Documents/" (26147 33291 3629 728000) "Github_Token.txt" "Github_Token" "free221.sdr/" "main.cpp" "./" "free221.pdf" "../" "Github_Token.sdr/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

@@ -1,0 +1,36 @@
+
+;; ----- smex-history -----
+(
+ customize-group
+ lsp-doctor
+ lsp-diagnose
+ lsp-ui-mode
+ python-mode
+ elpy-mode
+ package-install
+)
+
+;; ----- smex-data -----
+(
+ (package-install . 36)
+ (package-list-packages . 7)
+ (nerd-icons-install-fonts . 1)
+ (theme-choose-variant . 2)
+ (customize-themes . 3)
+ (customize-group . 16)
+ (package-delete . 3)
+ (customize-variable . 2)
+ (rot13-region . 1)
+ (eglot . 1)
+ (lsp-install-server . 14)
+ (quickrun . 2)
+ (dirvish . 1)
+ (treemacs . 1)
+ (treemacs-mode . 1)
+ (lsp-python-ms-update-server . 1)
+ (elpy-mode . 1)
+ (python-mode . 2)
+ (lsp-ui-mode . 1)
+ (lsp-diagnose . 1)
+ (lsp-doctor . 1)
+)

@@ -1,4 +1,4 @@
- ;; Loading MELPA
+;; Loading MELPA
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
@@ -9,15 +9,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(custom-enabled-themes '(doom-ayu-dark))
- '(custom-safe-themes
-   '("4ade6b630ba8cbab10703b27fd05bb43aaf8a3e5ba8c2dc1ea4a2de5f8d45882" "0c860c4fe9df8cff6484c54d2ae263f19d935e4ff57019999edbda9c7eda50b8" "4eb9462a8fff9153bfe88a9ef53aa043aec8b79c5298d2873e887e0c3a8b03de" "3325e2c49c8cc81a8cc94b0d57f1975e6562858db5de840b03338529c64f58d1" default))
+ '(custom-enabled-themes '(deeper-blue))
  '(display-battery-mode t)
  '(display-time-mode t)
  '(global-display-line-numbers-mode t)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(lsp-pyright elpy elisp-autofmt highlight-defined projectile company-box quickrun lsp-java lsp-ui lsp-mode company format-all move-dup rainbow-delimiters smartparens ialign multiple-cursors prettify-math prettify-greek highlight-thing symbol-overlay rainbow-mode highlight-indent-guides atom-dark-theme atom-one-dark-theme doom-themes dimmer doom-modeline smex ido-vertical-mode ido-completing-read+ goto-line-preview centaur-tabs yascroll all-the-icons-nerd-fonts beacon nerd-icons all-the-icons dashboard lua-mode ayu-theme gotham-theme memory-usage monokai-theme which-key))
+   '(web-mode web-beautify js2-mode json-mode tide flycheck-rust cargo rustic lua-mode beacon centaur-tabs company company-box dashboard dimmer doom-modeline elisp-autofmt elpy emojify flycheck format-all goto-line-preview highlight-defined highlight-indent-guides highlight-thing ialign ido-completing-read+ ido-vertical-mode lsp-java lsp-mode lsp-pyright lsp-ui move-dup multiple-cursors prettify-greek prettify-math projectile rainbow-delimiters rainbow-mode smartparens smex symbol-overlay treemacs treemacs-all-the-icons treemacs-icons-dired treemacs-nerd-icons which-key yascroll all-the-icons))
  '(scroll-bar-mode nil)
  '(size-indication-mode t)
  '(tool-bar-mode nil)
@@ -28,7 +26,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:slant normal :weight bold :height 155 :width normal :family "Fira Code"))))
+ '(default ((t (:slant normal :weight bold :height 130 :width normal :family "Fira Code"))))
  '(highlight-thing ((t (:background "light coral")))))
 
 
@@ -113,7 +111,7 @@
 
 (global-yascroll-bar-mode 1)
 
-;; --------------------------[Centaur Package]----------------------------
+;; --------------------------[Centaur-tabs Package]----------------------------
 
 (require 'centaur-tabs)
 (centaur-tabs-mode t)
@@ -367,6 +365,27 @@
 ;; When non-nil, move the mouse pointer over a symbol to show the doc
 ;;(setq lsp-ui-doc-show-with-mouse)
 
+;; --------------------------[lsp-angular Package]----------------------------
+
+;;(setq lsp-clients-angular-language-server-command
+;;  '("node"
+;;    "/usr/lib/node_modules/@angular/language-server"
+;;    "--ngProbeLocations"
+;;    "/usr/lib/node_modules"
+;;    "--tsProbeLocations"
+;;    "/usr/lib/node_modules"
+;;    "--stdio"))
+
+(setq lsp-clients-angular-language-server-command
+  '("node"
+    "C:/Users/thebl/AppData/Roaming/npm/node_modules/@angular/language-server"
+    "--ngProbeLocations"
+    "C:/Users/thebl/AppData/Roaming/npm/node_modules"
+    "--tsProbeLocations"
+    "C:/Users/thebl/AppData/Roaming/npm/node_modules"
+    "--stdio"))
+
+;; --------------------------[lsp-java Package]----------------------------
 
 ;; --------------------------[lsp-java Package]----------------------------
 
@@ -405,8 +424,9 @@
 ;; --------------------------[flycheck Package]----------------------------
 
 ;; Check https://www.flycheck.org/en/latest/ for more info.
-;; (require 'flycheck)
-(setq global-flycheck-mode +1)
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(setq global-flycheck-mode +1)
 
 ;; --------------------------[highlight-defind Package]----------------------------
 
@@ -501,27 +521,50 @@
 (require 'elpy)
 (elpy-enable)
 
+;; --------------------------[web-beautify Package]----------------------------
 
+(require 'web-beautify)
+(eval-after-load 'js2-mode
+  '(add-hook 'js2-mode-hook
+             (lambda ()
+               (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
 
-;; --------------------------[lsp-mode Package]----------------------------
-;; --------------------------[lsp-mode Package]----------------------------
-;; --------------------------[lsp-mode Package]----------------------------
-;; --------------------------[lsp-mode Package]----------------------------
-;; --------------------------[lsp-mode Package]----------------------------
+;; Or if you're using 'js-mode' (a.k.a 'javascript-mode')
+(eval-after-load 'js
+  '(add-hook 'js-mode-hook
+             (lambda ()
+               (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
 
-;; I will Stop configuring this file for a while.
-;; Last thing I did was lsp-pyright and elpy packages.
+(eval-after-load 'json-mode
+  '(add-hook 'json-mode-hook
+             (lambda ()
+               (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
 
+(eval-after-load 'sgml-mode
+  '(add-hook 'html-mode-hook
+             (lambda ()
+               (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
 
+(eval-after-load 'web-mode
+  '(add-hook 'web-mode-hook
+             (lambda ()
+               (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
 
+(eval-after-load 'css-mode
+  '(add-hook 'css-mode-hook
+             (lambda ()
+               (add-hook 'before-save-hook 'web-beautify-css-buffer t t))))
 
+;; --------------------------[web-mode Package]----------------------------
 
-
-
-
-
-
-
-
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 

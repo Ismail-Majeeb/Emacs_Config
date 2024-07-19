@@ -6,9 +6,10 @@
     (yasnippet "0.8.0")
     (s "1.11.0"))
   :commit "777e9909c8f1c11f1cfb8dbf5fe4a66d2ab95e1e" :authors
-  '(("Jorgen Schaefer <contact@jorgenschaefer.de>, Gaby Launay" . "gaby.launay@protonmail.com"))
+  '(("Jorgen Schaefer" . "contact@jorgenschaefer.de")
+    ("Gaby Launay" . "gaby.launay@protonmail.com"))
   :maintainer
-  '("Jorgen Schaefer <contact@jorgenschaefer.de>, Gaby Launay" . "gaby.launay@protonmail.com")
+  '("Jorgen Schaefer" . "contact@jorgenschaefer.de")
   :keywords
   '("python" "ide" "languages" "tools")
   :url "https://github.com/jorgenschaefer/elpy")

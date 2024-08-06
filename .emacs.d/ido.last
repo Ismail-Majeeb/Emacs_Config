@@ -2,6 +2,8 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/usb/Dev/" . "Test/")
+ ("/home/usb/" . "Dev/")
  ("e:/Dev/_Projects/Angular Projects/POS_Project/" . "src/")
  ("e:/Dev/_Projects/Angular Projects/" . "POS_Project/")
  ("e:/Dev/_Projects/" . "Angular Projects/")
@@ -13,6 +15,9 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/usb/"
+ "/home/usb/Dev/"
+ "/home/usb/Dev/Test/"
  "e:/Dev/_Projects/Angular Projects/POS_Project/src/"
  "e:/Dev/_Projects/Angular Projects/POS_Project/"
  "e:/Dev/"
@@ -21,15 +26,25 @@
 
 ;; ----- ido-work-file-list -----
 (
+ ".emacs"
+ "Test.lua"
+ "test.tex"
+ "Test.java"
+ "test.py"
+ "main.cpp"
  "main.ts"
  "server.ts"
  "PythonTest.py"
- "main.cpp"
- ".emacs"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/usb/" (26287 43576 402754 434000) ".Xauthority" ".bash_profile" ".xsession-errors.old" ".dotnet/" ".local/" "Documents/" ".config/" "../" ".bashrc" ".pki/" ".emacs.d/" "./" ".Xresources" ".cache/" "Dev/" ".npm/" ".dmrc" ".xsession-errors" ".viminfo" ".emacs" ".screenlayout/" "Downloads/" ".eclipse/" ".nuget/" "Pictures/" ".bash_logout" ".emacs~" ".bash_history" ".cargo/" ".vscode/" ".wget-hsts")
+
+ ("/home/usb/Dev/Test/" (26232 16156 825146 334000) "test.synctex.gz" "test.pdf" "../" "auto/" "test.log" "test.toc" "./" "test.tex" "test.out" "test.aux")
+
+ ("/home/usb/Dev/" (26287 43407 953556 123000) "main" "../" "_Projects/" "./" "main.cpp" "TestCPP/" "Test/" "test.py" "Test.java")
+
  ("e:/Dev/_Projects/Angular Projects/POS_Project/src/" (26259 31728 0 0) "styles.css" "main.ts" "main.server.ts" "index.html" "app/" "../" "./")
 
  ("e:/Dev/_Projects/Angular Projects/POS_Project/" (26259 47437 0 0) "tsconfig.spec.json" "tsconfig.json" "tsconfig.app.json" "src/" "server.ts" "README.md" "public/" "package.json" "package-lock.json" "node_modules/" "angular.json" ".vscode/" ".gitignore" ".git/" ".editorconfig" ".angular/" "../" "./")

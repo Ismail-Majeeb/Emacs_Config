@@ -1,0 +1,70 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/usb/Dev/" . "Test/")
+ ("/home/usb/" . "Dev/")
+ ("e:/Dev/_Projects/Angular Projects/POS_Project/" . "src/")
+ ("e:/Dev/_Projects/Angular Projects/" . "POS_Project/")
+ ("e:/Dev/_Projects/" . "Angular Projects/")
+ ("e:/Dev/" . "_Projects/")
+ ("e:/" . "Dev/")
+ ("c:/Users/" . "thebl/")
+ ("c:/" . "Users/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/usb/Dev/"
+ "/home/usb/Dev/Test/"
+ "/home/usb/"
+ "e:/Dev/_Projects/Angular Projects/POS_Project/src/"
+ "e:/Dev/_Projects/Angular Projects/POS_Project/"
+ "e:/Dev/"
+ "c:/Users/thebl/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "Test.lua"
+ "test.tex"
+ "Test.java"
+ "test.py"
+ "main.cpp"
+ ".emacs"
+ "main.ts"
+ "server.ts"
+ "PythonTest.py"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/usb/" (26287 43576 402754 434000) ".Xauthority" ".bash_profile" ".xsession-errors.old" ".dotnet/" ".local/" "Documents/" ".config/" "../" ".bashrc" ".pki/" ".emacs.d/" "./" ".Xresources" ".cache/" "Dev/" ".npm/" ".dmrc" ".xsession-errors" ".viminfo" ".emacs" ".screenlayout/" "Downloads/" ".eclipse/" ".nuget/" "Pictures/" ".bash_logout" ".emacs~" ".bash_history" ".cargo/" ".vscode/" ".wget-hsts")
+
+ ("/home/usb/Dev/Test/" (26232 16156 825146 334000) "test.synctex.gz" "test.pdf" "../" "auto/" "test.log" "test.toc" "./" "test.tex" "test.out" "test.aux")
+
+ ("/home/usb/Dev/" (26287 43407 953556 123000) "main" "../" "_Projects/" "./" "main.cpp" "TestCPP/" "Test/" "test.py" "Test.java")
+
+ ("e:/Dev/_Projects/Angular Projects/POS_Project/src/" (26259 31728 0 0) "styles.css" "main.ts" "main.server.ts" "index.html" "app/" "../" "./")
+
+ ("e:/Dev/_Projects/Angular Projects/POS_Project/" (26259 47437 0 0) "tsconfig.spec.json" "tsconfig.json" "tsconfig.app.json" "src/" "server.ts" "README.md" "public/" "package.json" "package-lock.json" "node_modules/" "angular.json" ".vscode/" ".gitignore" ".git/" ".editorconfig" ".angular/" "../" "./")
+
+ ("e:/Dev/_Projects/Angular Projects/" (26259 31728 0 0) "POS_Project/" "../" "./")
+
+ ("e:/Dev/_Projects/" (26244 44508 0 0) "TestDjango_App/" "Server Manager App [Java Spring + Angular]/" "Modulo Calculator/" "Meeting ٍSunday 30 June 2024.pdf" "istockphoto-184276818-612x612.jpg" "In these figures.docx" "ifit.zip" "GP_App/" "GPACalcV2.0/" "GPA Calc.___/" "gettyimages-89121603-612x612.jpg" "G/" "C++/" "B/" "Angular Projects/" "../" "./")
+
+ ("e:/Dev/" (26264 65315 0 0) "_Projects/" "Words.txt" "Time Calculator/" "test.java" "Test Fortran/" "Some Notes On LaTeX.pdf" "Simple Server Manager App/" "Selection Sort Algorithm Implementation.cpp" "ReelLearning C++ Course/" "PythonTest.py~" "PythonTest.py" "Problems/" "PerlTest.pl" "NPrimeNumbers.java" "New Folder/" "main.rs" "main.exe" "main.cpp~" "main.cpp" "LuaTest.lua" "Learn_Lua_in_15_Minuts.lua" "Latex Test/" "JavaTest.java" "Imgui_Test.cpp" "Imgui_Test/" "imgui/" "Image_Compresser.py" "FB_Scraper/" "Factorial.lua" "eclipse-workspace/" "Courses/" "C++ Primer Codes/" "Assembly/" "Anytype key.txt" "#Words.md#" "../" "./")
+
+ ("d:/Emacs/emacs-29.3_2/" (26140 46303 0 0) "share/" "libexec/" "lib/" "include/" "bin/" "../" "./")
+
+ ("d:/Emacs/emacs-29.3_2/bin/" (26140 46285 0 0) "zlib1.dll" "runemacs.exe" "libzstd.dll" "libXpm-nox4.dll" "libxml2-2.dll" "libwinpthread-1.dll" "libwebpdemux-2.dll" "libwebp-7.dll" "libunistring-2.dll" "libtree-sitter.dll" "libtiff-5.dll" "libthai-0.dll" "libtasn1-6.dll" "libstdc++-6.dll" "libsqlite3-0.dll" "librsvg-2-2.dll" "libpng16-16.dll" "libpixman-1-0.dll" "libpcre-1.dll" "libpangowin32-1.0-0.dll" "libpangoft2-1.0-0.dll" "libpangocairo-1.0-0.dll" "libpango-1.0-0.dll" "libp11-kit-0.dll" "libnettle-8.dll" "liblzma-5.dll" "libLerc.dll" "liblcms2-2.dll" "libjpeg-8.dll" "libjbig-0.dll" "libjansson-4.dll" "libintl-8.dll" "libidn2-0.dll" "libiconv-2.dll" "libhogweed-6.dll" "libharfbuzz-0.dll" "libgraphite2.dll" "libgobject-2.0-0.dll" "libgnutls-30.dll" "libgmp-10.dll" "libgmodule-2.0-0.dll" "libglib-2.0-0.dll" "libgio-2.0-0.dll" "libgif-7.dll" "libgdk_pixbuf-2.0-0.dll" "libgcc_s_seh-1.dll" "libfribidi-0.dll" "libfreetype-6.dll" "libfontconfig-1.dll" "libffi-7.dll" "libexpat-1.dll" "libdeflate.dll" "libdatrie-1.dll" "libcairo-gobject-2.dll" "libcairo-2.dll" "libbz2-1.dll" "libbrotlidec.dll" "libbrotlicommon.dll" "etags.exe" "emacsclientw.exe" "emacsclient.exe" "emacs.exe" "emacs-29.3.exe" "ebrowse.exe" "ctags.exe" "addpm.exe" "../" "./")
+
+ ("c:/Users/thebl/" (26264 4646 0 0) "Videos/" "tensorflow_datasets/" "Templates/" "Start Menu/" "source/" "SendTo/" "Searches/" "Saved Games/" "Recent/" "query" "PrintHood/" "Postman/" "Pictures/" "package-lock.json" "OneDrive/" "ntuser.ini" "NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms" "NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms" "NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf" "NTUSER.DAT{a2332f17-cdbf-11ec-8680-002248483d79}.TxR.blf" "NTUSER.DAT{a2332f17-cdbf-11ec-8680-002248483d79}.TxR.2.regtrans-ms" "NTUSER.DAT{a2332f17-cdbf-11ec-8680-002248483d79}.TxR.1.regtrans-ms" "NTUSER.DAT{a2332f17-cdbf-11ec-8680-002248483d79}.TxR.0.regtrans-ms" "ntuser.dat.LOG2" "ntuser.dat.LOG1" "NTUSER.DAT" "npm-cache/" "NetHood/" "My Documents/" "Music/" "Local Settings/" "Links/" "IntelGraphicsProfiles/" "Favorites/" "Downloads/" "Documents/" "Cookies/" "Contacts/" "Application Data/" "AppData/" "ansel/" ".vscode/" ".streamlit/" ".openshot_qt/" ".node_repl_history" ".matplotlib/" ".m2/" ".lesshst" ".keras/" ".ipython/" ".gitconfig" ".emacs~" ".emacs.d/" ".emacs" ".dotnet/" ".config/" ".codetogether/" ".chocolatey/" ".cache/" ".angular-config.json" "../" "./")
+
+ ("c:/Users/" (25910 52431 0 0) "thebl/" "Public/" "desktop.ini" "Default User/" "Default/" "All Users/" "../" "./")
+
+ ("d:/Emacs/" (26140 46353 0 0) "Uninstall.exe" "emacs-29.3_2/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

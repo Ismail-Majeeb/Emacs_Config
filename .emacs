@@ -9,13 +9,16 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(custom-enabled-themes '(deeper-blue))
+ '(custom-enabled-themes '(doom-dark+))
+ '(custom-safe-themes
+   '("aec7b55f2a13307a55517fdf08438863d694550565dee23181d2ebd973ebd6b8" "4eb9462a8fff9153bfe88a9ef53aa043aec8b79c5298d2873e887e0c3a8b03de" "4ade6b630ba8cbab10703b27fd05bb43aaf8a3e5ba8c2dc1ea4a2de5f8d45882" default))
  '(display-battery-mode t)
  '(display-time-mode t)
+ '(eglot-autoshutdown t)
  '(global-display-line-numbers-mode t)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(web-mode web-beautify js2-mode json-mode tide flycheck-rust cargo rustic lua-mode beacon centaur-tabs company company-box dashboard dimmer doom-modeline elisp-autofmt elpy emojify flycheck format-all goto-line-preview highlight-defined highlight-indent-guides highlight-thing ialign ido-completing-read+ ido-vertical-mode lsp-java lsp-mode lsp-pyright lsp-ui move-dup multiple-cursors prettify-greek prettify-math projectile rainbow-delimiters rainbow-mode smartparens smex symbol-overlay treemacs treemacs-all-the-icons treemacs-icons-dired treemacs-nerd-icons which-key yascroll all-the-icons))
+   '(markdown-preview-mode java-imports java-snippets javadoc-lookup omnisharp auctex auctex-latexmk auctex-lua corfu csproj-mode sly typescript-mode vertico yaml-mode eglot eglot-java web-mode web-beautify js2-mode json-mode tide flycheck-rust cargo rustic lua-mode beacon centaur-tabs company company-box dashboard dimmer doom-modeline elisp-autofmt elpy emojify flycheck format-all goto-line-preview highlight-defined highlight-indent-guides highlight-thing ialign ido-completing-read+ ido-vertical-mode lsp-java lsp-mode lsp-pyright lsp-ui move-dup multiple-cursors prettify-greek prettify-math projectile rainbow-delimiters rainbow-mode smartparens smex symbol-overlay treemacs treemacs-all-the-icons treemacs-icons-dired treemacs-nerd-icons which-key yascroll all-the-icons))
  '(scroll-bar-mode nil)
  '(size-indication-mode t)
  '(tool-bar-mode nil)
@@ -26,9 +29,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:slant normal :weight bold :height 130 :width normal :family "Fira Code"))))
- '(highlight-thing ((t (:background "light coral")))))
-
+ '(default ((t (:slant normal :weight bold :height 145 :width normal :family "Fira Code"))))
+ '(highlight-thing ((t (:background "dim gray")))))
 
 ;; To Load all-the-icon icons
 (when (display-graphic-p)
@@ -43,6 +45,34 @@
   (set-fontset-font t 'unicode (font-spec :family "github-octicons") nil 'append)
   (set-fontset-font t 'unicode (font-spec :family "FontAwesome") nil 'append)
   (set-fontset-font t 'unicode (font-spec :family "Weather Icons") nil 'append))
+
+;; --------------------------[vertico Package]----------------------------
+
+;; Enable completion by narrowing
+(vertico-mode t)
+
+;; Enable horizontal completion
+(vertico-flat-mode t)
+
+;; Improve directory navigation
+;; (with-eval-after-load 'vertico
+;;   (define-key vertico-map (kbd "RET") #'vertico-directory-enter)
+;;   (define-key vertico-map (kbd "DEL") #'vertico-directory-delete-word)
+;;   (define-key vertico-map (kbd "M-d") #'vertico-directory-delete-char))
+
+
+;; --------------------------[auctex Package]----------------------------
+
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
+;; Enable LaTeX math support
+(add-hook 'LaTeX-mode-hook #'LaTeX-math-mode)
+
+;; Enable reference mangment
+(add-hook 'LaTeX-mode-hook #'reftex-mode)
+
 
 ;; --------------------------[Dashboard Package]----------------------------
 (require 'dashboard)
@@ -310,56 +340,73 @@
 ;; --------------------------[dumb-jump Package]----------------------------
 
 
+;; --------------------------[eglot Package]----------------------------
+
+(require 'eglot)
+(add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+(add-to-list 'eglot-server-programs '((csharp-mode) "omnisharp"))
+(add-to-list 'eglot-server-programs '((html-mode) "vscode-html-language-server"))
+(add-to-list 'eglot-server-programs '((css-mode) "vscode-css-language-server"))
+(add-to-list 'eglot-server-programs '((json-mode) "vscode-json-language-server"))
+(add-to-list 'eglot-server-programs '((js2-mode) "vscode-eslint-language-server"))
+(add-to-list 'eglot-server-programs '((java-mode) "jdtls"))
+(add-to-list 'eglot-server-programs '((lua-mode) "lua-language-server"))
+(add-to-list 'eglot-server-programs '((typescript-mode) "typescript-language-server"))
+(add-to-list 'eglot-server-programs '(markdown-mode . ("marksman")))
+(add-to-list 'eglot-server-programs '((python-mode) "pyright"))
+(add-to-list 'eglot-server-programs '((latex-mode) "texlab"))
+;;(add-to-list 'eglot-server-programs '(() ""))
+(add-hook 'prog-mode-hook #'eglot-ensure)
 
 ;; --------------------------[lsp-mode Package]----------------------------
 
 ;; check https://emacs-lsp.github.io/lsp-mode/ for more info.
 ;; if you want to change prefix for lsp-mode keybindings.
-(setq lsp-keymap-prefix "s-l")
-(require 'lsp-mode)
-(add-hook 'prog-mode-hook #'lsp)
-
-(setq lsp-ido-show-symbol-kind t
-      lsp-ido-show-symbol-filename t)
+;; (setq lsp-keymap-prefix "s-l")
+;; (require 'lsp-mode)
+;; (add-hook 'prog-mode-hook #'lsp)
+;; 
+;; (setq lsp-ido-show-symbol-kind t
+;;       lsp-ido-show-symbol-filename t)
 
 ;; --------------------------[lsp-ui Package]------------------------------
 
-(require 'lsp-ui)
+;;(require 'lsp-ui)
 
 ;; lsp-ui-sideline:
 ;; show diagnostics messages in sideline
-(setq lsp-ui-sideline-show-diagnostics t)
+;; (setq lsp-ui-sideline-show-diagnostics t)
 ;; show hover messages in sideline
-(setq lsp-ui-sideline-show-hover t)
+;; (setq lsp-ui-sideline-show-hover t)
 ;; show code actions in sideline
-(setq lsp-ui-sideline-show-code-actions t)
+;; (setq lsp-ui-sideline-show-code-actions t)
 ;; When set to line the information will be updated when user changes current line
 ;; otherwise the information will be updated when user changes current point
-(setq lsp-ui-sideline-update-mode t)
+;; (setq lsp-ui-sideline-update-mode t)
 ;; seconds to wait before showing sideline
-(setq lsp-ui-sideline-delay t)
+;; (setq lsp-ui-sideline-delay t)
 
 ;; lsp-ui-peek:
 ;; enable lsp-ui-peek
-(setq lsp-ui-peek-enable t)
+;; (setq lsp-ui-peek-enable t)
 ;;  show the directory of files
-(setq lsp-ui-peek-show-directory t)
+;; (setq lsp-ui-peek-show-directory t)
 ;; You may remap xref-find-{definitions,references} (bound to M-. M-? by default):
-(define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-(define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+;; (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+;; (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
 ;; There is a window-local jump list dedicated to cross references:
-(setq lsp-ui-peek-jump-backward t)
-(setq lsp-ui-peek-jump-forward t)
+;; (setq lsp-ui-peek-jump-backward t)
+;; (setq lsp-ui-peek-jump-forward t)
 
 ;; lsp-ui-doc
 ;; Enable lsp-ui-doc
-(setq lsp-ui-doc-enable t)
+;; (setq lsp-ui-doc-enable t)
 ;; Where to display the doc (top, bottom or at-point)
-(setq lsp-ui-doc-position 'top)
+;; (setq lsp-ui-doc-position 'top)
 ;; Where to display the doc (left or right)
-(setq lsp-ui-doc-side 'right)
+;; (setq lsp-ui-doc-side 'right)
 ;; Number of seconds before showing the doc
-(setq lsp-ui-doc-delay 1.5)
+;; (setq lsp-ui-doc-delay 1.5)
 ;; When non-nil, move the cursor over a symbol to show the doc
 ;;(setq lsp-ui-doc-show-with-cursor)
 ;; When non-nil, move the mouse pointer over a symbol to show the doc
@@ -376,26 +423,31 @@
 ;;    "/usr/lib/node_modules"
 ;;    "--stdio"))
 
-(setq lsp-clients-angular-language-server-command
-  '("node"
-    "C:/Users/thebl/AppData/Roaming/npm/node_modules/@angular/language-server"
-    "--ngProbeLocations"
-    "C:/Users/thebl/AppData/Roaming/npm/node_modules"
-    "--tsProbeLocations"
-    "C:/Users/thebl/AppData/Roaming/npm/node_modules"
-    "--stdio"))
+;;(setq lsp-clients-angular-language-server-command
+;;  '("node"
+;;    "C:/Users/thebl/AppData/Roaming/npm/node_modules/@angular/language-server"
+;;    "--ngProbeLocations"
+;;    "C:/Users/thebl/AppData/Roaming/npm/node_modules"
+;;    "--tsProbeLocations"
+;;    "C:/Users/thebl/AppData/Roaming/npm/node_modules"
+;;    "--stdio"))
 
+;; --------------------------[corfu Package]----------------------------
+;;(require 'corfu)
+;; Enable autocompletion by default in programming buffers
+;;(add-hook 'prog-mode-hook #'corfu-mode)
+
+;; Enable automatic completion.
+;;(setq corfu-auto t)
 ;; --------------------------[lsp-java Package]----------------------------
 
-;; --------------------------[lsp-java Package]----------------------------
-
-(require 'lsp-java)
-(add-hook 'java-mode-hook #'lsp)
+;; (require 'lsp-java)
+;; (add-hook 'java-mode-hook #'lsp)
 
 ;; --------------------------[lsp-pyright Package]----------------------------
 
-(require 'lsp-pyright)
-(add-hook 'python-mode-hook #'lsp) ; or lsp-deferred
+;; (require 'lsp-pyright)
+;; (add-hook 'python-mode-hook #'lsp) ; or lsp-deferred
 
 ;; --------------------------[quickrun Package]----------------------------
 ;; check https://github.com/emacsorphanage/quickrun for more information.

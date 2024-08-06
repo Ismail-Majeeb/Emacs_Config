@@ -2,20 +2,27 @@
 ;; ----- smex-history -----
 (
  quickrun
- package-install
- lsp-install-server
  customize-themes
- package-autoremove
  package-list-packages
- cd
+ restart-emacs
+ eglot
+ eglot-list-connections
+ eglot-server-menu
 )
 
 ;; ----- smex-data -----
 (
  (package-install . 11)
- (package-list-packages . 1)
- (package-autoremove . 1)
- (customize-themes . 1)
+ (package-list-packages . 6)
+ (package-autoremove . 2)
+ (customize-themes . 3)
  (lsp-install-server . 12)
- (quickrun . 1)
+ (quickrun . 9)
+ (customize-group . 3)
+ (eglot-server-menu . 3)
+ (eglot-menu . 1)
+ (eglot . 2)
+ (package-delete . 1)
+ (eglot-list-connections . 1)
+ (restart-emacs . 1)
 )
